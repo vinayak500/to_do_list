@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> TODO </title>
+        <title> <%= title %> </title>
         <linK rel="stylesheet" href="/css/home.css"> 
     </head>
 
@@ -19,9 +19,23 @@
             <option value="cleaning">Cleaning</option>
             <option value="other">Other</option>
         </select>
-        <input type="date" description" placeholder="Enter The Task:" required>
+        <input type="date"  name="date" required>
         <button type="submit" id="button"> ADD </button>
     </form>
+
+
+    <% for(let i of task_list){ %>
+
+<li>
+    <div>
+        <p> <%= i.description %> </p>
+        <p> <%= i.category %> </p>
+        <p> <%= i.date %> </p>
+        <a href="/delete-task/?id=<%= i._id %>"> <p> Delete  </p>  </a>
+    </div>
+</li>
+
+        <% } %>
 
 
         <script type="text/javascript" src="js/home.js"></script> 
