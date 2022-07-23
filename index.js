@@ -14,12 +14,26 @@ app.use(express.static('assests'));
 
 app.get('/', function(req,res)
 {
-
+      return res.render('home' ,{});
 });
 
 
 app.post('/create-task' , function(req,res){
 
+
+    console.log(req.body);
+      task.create({
+        description: req.body.description ,
+        category: req.body.category
+      } , function(err , newTask){
+        if(err)
+        {
+            console.log('error in creating a task!');
+            return;
+        }
+        console.log(newTask);
+        return res.redirect('/');
+      });
 });
 
 

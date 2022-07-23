@@ -8,6 +8,22 @@
 
     <body>
         
+    <h2> TODO LIST APP </h2>
+    <form action="/create-task" method="post" >
+        <input type="text" name="description" placeholder="Enter The Task:" required>
+        <select name="category" id="category">
+            <option value="n/a"> Choose a category </option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+            <option value="school">School</option>
+            <option value="cleaning">Cleaning</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="date" description" placeholder="Enter The Task:" required>
+        <button type="submit" id="button"> ADD </button>
+    </form>
+
+
         <script type="text/javascript" src="js/home.js"></script> 
     </body>
 </html>
